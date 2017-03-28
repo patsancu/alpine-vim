@@ -1,0 +1,37 @@
+Having already cloned the repo, but not forked it
+--------------------------------------------------
+
+* Ideally, create the repo with: https://developer.github.com/v3/repos/#create
+
+* If not, create it via forking the repo.
+
+* In this example, it will be https://github.com/JAremko/alpine-vim
+
+* Forking it will result in https://github.com/octosh/alpine-vim
+
+* Off the top of my head 
+
+* In your local, add a new remote to your fork; then fetch it, and push your changes up to it
+```
+    git remote add my-fork https://github.com/octosh/alpine-vim
+    git fetch my-fork
+    git push my-fork
+```
+
+Traditionally
+--------------
+Otherwise, if you want to follow convention:
+
+1. Fork their repo on Github
+2. In your local, rename your origin remote to upstream
+
+    git remote rename origin upstream
+
+3. Add a new origin
+
+    git remote add origin git@github...my-fork
+
+4. Fetch & push
+
+    git fetch origin
+    git push origin

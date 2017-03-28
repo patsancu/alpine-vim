@@ -166,13 +166,6 @@ RUN mkdir -p $UHOME/.vim \
 	&& git clone https://github.com/flazz/vim-colorschemes.git 
 RUN cd $UHOME/ && mv .vim/vim-colorschemes/colors .vim/colors && rm -rf .vim/vim-colorschemes 
 
-#RUN cd $UHOME/bundle \
-    #&& git clone https://github.com/flazz/vim-colorschemes.git 
-
-#RUN cd $UHOME/bundle/vim-colorschemes \
-	#&& git submodule add -f https://github.com/flazz/vim-colorschemes.git $UHOME/bundle/colorschemes 
-	#&& git clone https://github.com/flazz/vim-colorschemes.git ~/.vim
-
 ENV TERM=xterm-256color
 
 # List of Vim plugins to disable
