@@ -125,7 +125,7 @@ nnoremap <Leader>, :bp<CR>
 " => color and theme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set background=dark
-colorscheme solarized
+colorscheme Monokai 
 set relativenumber
 set number
 

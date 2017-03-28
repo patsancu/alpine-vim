@@ -144,7 +144,6 @@ RUN cd $UHOME/bundle/ \
 # Theme
     && git clone --depth 1 \
     https://github.com/altercation/vim-colors-solarized
-    
 # Build default .vimrc
 RUN  mv -f $UHOME/.vimrc $UHOME/.vimrc~ \
      && curl -s \
@@ -160,6 +159,19 @@ RUN  mv -f $UHOME/.vimrc $UHOME/.vimrc~ \
 
 # Pathogen help tags generation
 RUN vim -E -c 'execute pathogen#helptags()' -c q ; return 0
+
+# All the nice colors
+RUN mkdir -p $UHOME/.vim \
+    && cd $UHOME/.vim \ 
+	&& git clone https://github.com/flazz/vim-colorschemes.git 
+RUN cd $UHOME/ && mv .vim/vim-colorschemes/colors .vim/colors && rm -rf .vim/vim-colorschemes 
+
+#RUN cd $UHOME/bundle \
+    #&& git clone https://github.com/flazz/vim-colorschemes.git 
+
+#RUN cd $UHOME/bundle/vim-colorschemes \
+	#&& git submodule add -f https://github.com/flazz/vim-colorschemes.git $UHOME/bundle/colorschemes 
+	#&& git clone https://github.com/flazz/vim-colorschemes.git ~/.vim
 
 ENV TERM=xterm-256color
 
